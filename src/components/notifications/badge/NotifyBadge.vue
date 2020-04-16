@@ -1,18 +1,25 @@
 <template>
   <div>
-    <div class="badge">{{ unreadNotificationCount }}</div>
+    <div class="badge">{{ unreadCount }}</div>
   </div>
 </template>
 <script>
 import { mapGetters } from "vuex";
+import { ActionType } from '../notification-state';
 
 export default {
   name: "NotifyBadge",
   computed: {
-    ...mapGetters(["unreadNotificationCount"])
+    ...mapGetters(["unreadCount"])
   },
   created() {
-    console.log("badge", this.count);
+    console.log("badge", this.unreadCount);
+    this.$store.dispatch(ActionType.FETCH_NOTIFICATIONS);
+  },
+  watch: {
+    unreadCount () {
+      console.log('changed');
+    }
   }
 };
 </script>

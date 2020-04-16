@@ -18,18 +18,15 @@
 import { mapGetters } from "vuex";
 
 export default {
-  name: "NotificationModal",
+  name: "NotificationList",
   data() {
     return {};
   },
   computed: {
     ...mapGetters({
+      unreadCount: "unreadCount",
       notifications: "allNotifications",
-      unread: "unreadNotifications"
-    }),
-    unreadCount() {
-      return this.unread.length;
-    }
+    })
   }
 };
 </script>

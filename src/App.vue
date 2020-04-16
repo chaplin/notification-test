@@ -2,19 +2,21 @@
   <div id="app">
     <NotifyBadge/>
     <hr>
-    <NotificationModal/>
+    <NotificationList/>
   </div>
 </template>
 
 <script>
-import { NotifyBadge } from "./components/notify-badge";
-import { NotificationModal } from "./components/notifications";
+import {
+  NotifyBadge,
+  NotificationList
+} from "./components/notifications";
 
 export default {
   name: "App",
   components: {
     NotifyBadge,
-    NotificationModal
+    NotificationList
   }
 };
 </script>
